@@ -3,10 +3,29 @@ import streamlit as st
 # Título de la aplicación
 st.title('Currículum Profesional')
 
+st.image('./image/484f7219c122ff3d5b7ffd6e3095d299.jpg', use_column_width=True)  # Puedes ajustar la ruta de la imagen
+
 # Información Personal
 st.header('Información Personal')
-nombre = st.text_input('Nombre completo', 'Juan Pérez')
-profesion = st.text_input('Profesión', 'Desarrollador de Software')
+# Estilo CSS para simular un cuadro de entrada
+estilo_cuadro = """
+    <style>
+        .cuadro {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+        }
+    </style>
+"""
+# Mostrar el nombre como texto encuadrado
+st.markdown(estilo_cuadro, unsafe_allow_html=True)
+
+st.write("Nombre completo")
+st.markdown('<div class="cuadro"> Larisa Natalia Jaime</div>', unsafe_allow_html=True)
+st.write("Profesión")
+profesion = ('Desarrollador de Software')
+st.markdown(f'<div class="cuadro"> {profesion}</div>', unsafe_allow_html=True)
 email = st.text_input('Correo electrónico', 'juan.perez@example.com')
 telefono = st.text_input('Teléfono', '+123456789')
 ubicacion = st.text_input('Ubicación', 'Ciudad, País')
